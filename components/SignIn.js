@@ -1,4 +1,4 @@
-import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
+import { ConnectWallet, useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import React from "react";
 import styles from "../styles/Theme.module.css";
@@ -32,12 +32,15 @@ export default function SignIn() {
       <div className={styles.main}>
         <h2 className={styles.noGapBottom}>Connect Your Wallet</h2>
         <p>Connect your wallet to check eligibility.</p>
-        <button
+        {/* <button
           onClick={connectWithMetamask}
           className={`${styles.mainButton} ${styles.spacerTop}`}
         >
           Connect Wallet
-        </button>
+        </button> */}
+          <di className={`${styles.mainButton} ${styles.spacerTop}`}>
+          <ConnectWallet/>
+          </di>
       </div>
     );
   }
